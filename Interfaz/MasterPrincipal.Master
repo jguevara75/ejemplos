@@ -1,0 +1,295 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPrincipal.master.cs" Inherits="SitioInterfaz.MasterPrincipal" %>
+
+<%@ Register assembly="Infragistics4.Web.v12.2, Version=12.2.20122.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.Web.UI" tagprefix="ig" %>
+
+<%@ Register assembly="Infragistics4.Web.v12.2, Version=12.2.20122.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.Web.UI.NavigationControls" tagprefix="ig" %>
+
+<%@ Register assembly="Infragistics4.Web.v12.2, Version=12.2.20122.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.Web.UI.LayoutControls" tagprefix="ig1" %>
+<%@ Register assembly="Infragistics4.WebUI.Misc.v12.2, Version=12.2.20122.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" namespace="Infragistics.WebUI.Misc" tagprefix="igmisc" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SysmoBackoffice</title>
+<script src="Scripts\scripts.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="FW 8 DW 8 XHTML" />
+<%--<script type="text/javascript">
+    window.onload = function () { contenidoSize(); }
+    window.onresize = function (event) { contenidoSize(); }
+
+    function contenidoSize() { document.getElementById("contenido").style.height = window.innerHeight - 270 + 'px'; }
+</script>--%>
+
+<link href="CSS/Estilo.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+ 
+    
+.igtab_THControl
+{
+	overflow: hidden;
+}
+
+
+.ig_Control
+{
+	background-color:White;
+	font-size:xx-small;
+	font-family: verdana;
+	color:Black;
+}
+
+
+.igtab_THHolder
+{
+	background-repeat:repeat-x;
+	background-position:bottom left ;
+	background-image: url(C:/Users/jgomez/Documents/Proyectos y Desarrollos/SYSMO/SitioInterfaz/InterfazUsuario/SitioInterfaz/ig_res/Default/./images/igtab_holderborder.gif);
+	margin:0px;
+	padding:0px;
+	position: relative;
+	display: block;
+	height: 23px;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+.igtab_THHolderNoScroll
+{
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+
+.igtab_THTabSel
+{
+	background-position:0px -100px ;
+}
+
+
+.igtab_THTab
+{
+	background-color:Transparent;
+	background-repeat:no-repeat;
+	background-position:top left ;
+	background-image: url(C:/Users/jgomez/Documents/Proyectos y Desarrollos/SYSMO/SitioInterfaz/InterfazUsuario/SitioInterfaz/ig_res/Default/./images/igtab_thleft.gif);
+	border-bottom:solid 1px #4679A6;
+	margin:0px;
+	padding-left:7px;
+	display: inline;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 22px;
+}
+
+
+.igtab_THTailSel
+{
+	background-color:Transparent;
+	background-repeat:no-repeat;
+	background-position:top right ;
+	background-image: url(C:/Users/jgomez/Documents/Proyectos y Desarrollos/SYSMO/SitioInterfaz/InterfazUsuario/SitioInterfaz/ig_res/Default/./images/igtab_thrightsel.gif);
+}
+
+
+.igtab_THTail
+{
+	background-color:Transparent;
+	background-repeat:no-repeat;
+	background-position:top right ;
+	background-image: url(C:/Users/jgomez/Documents/Proyectos y Desarrollos/SYSMO/SitioInterfaz/InterfazUsuario/SitioInterfaz/ig_res/Default/./images/igtab_thright.gif);
+	margin:0px;
+	padding-right:7px;
+	padding-left:0px;
+	display: block;
+	height: 100%;
+}
+
+
+.igtab_THCenterSel
+{
+	background-color:#8FC6EA;
+	background-position:0px -100px ;
+}
+
+
+.igtab_THCenter
+{
+	background-color:#F0F0F0;
+	background-repeat:repeat-x;
+	background-image: url(SitioInterfaz/ig_res/Default/./images/igtab_thcenter.jpg);
+	font-size:22px;
+	font-family:sans-serif ;
+	padding:0px 1px 0px 1px;
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	line-height: 22px;
+	overflow: hidden;
+	text-align:center;
+}
+
+
+.igtab_THText
+{
+	font-size:11px;
+	font-family: Verdana;
+	border-width:0px;
+	padding:0px 1px 0px 1px;
+	white-space: nowrap;
+	line-height: 22px;
+	cursor:default;
+	vertical-align:middle;
+}
+
+
+.igtab_THContentHolder
+{
+	background-color:#FFFFFF;
+	border:solid 1px #4679A6;
+	border-top-width:0px;
+	height: 80%;
+	overflow: hidden;
+	position: relative;
+}
+
+
+
+
+    .igtab_THContent
+{
+	background-color:White;
+	height: 100%;
+	position: relative;
+}
+
+    .style1
+    {
+        width: 100%;
+    }
+
+    </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+  </head>
+<body bgcolor="#a7a7a7" style="padding:0; margin:0">
+    <form id="form1" runat="server">
+           <telerik:RadSkinManager ID="RadSkinManager1" runat="server" Skin="Office2010Blue" ShowChooser="false">
+       </telerik:RadSkinManager>
+
+    <div style="vertical-align: bottom" align ="center"> <!-- es para alinear al centro la pantalla -->
+
+<!--The following section is an HTML table which reassembles the sliced image in a browser.-->
+<!--Copy the table section including the opening and closing table tags, and paste the data where-->
+<!--you want the reassembled image to appear in the destination document. -->
+<!--======================== BEGIN COPYING THE HTML HERE ==========================-->
+<table border="0" cellpadding="0" cellspacing="0" class="tabla">
+<!-- fwtable fwsrc="Pantalla06.png" fwpage="Página 1" fwbase="sysmo01.jpg" fwstyle="Dreamweaver" fwdocid = "1290286603" fwnested="1" -->
+  <tr><!-- row 1 -->
+    <td class="login" colspan="0">&nbsp;</td>
+  </tr>
+  <tr ><!-- row 2 -->
+   <td class="BarraBotones" >
+       <table style="width:100%; background-color:#25a0da; padding: 5px; border-top: 1px solid White; border-bottom: 1px solid White">
+           <tr>
+               <td style="color: White !important;">
+                   <asp:Label ID="Label1" runat="server" Text="Bienvenido Megan Leal | " 
+                       CssClass="Desconectar"></asp:Label>
+                   <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login.aspx" 
+                       CssClass="Desconectar">Desconectarse</asp:LinkButton>
+                   <asp:Image ID="Image1" runat="server" 
+                       ImageUrl="~/Imagen/Img_Toolbar/door_out.png" Height="17px" Width="18px" />
+               </td>
+               <td style="text-align: right; color: White;">
+                    Barra de Navegación:
+                    <asp:LinkButton ID="LinkButton2" runat="server">Nav01</asp:LinkButton>
+                    /<asp:LinkButton ID="LinkButton3" runat="server">Nav02</asp:LinkButton>
+                    /<asp:LinkButton ID="LinkButton4" runat="server">Nav03</asp:LinkButton>
+                    /<asp:LinkButton ID="LinkButton5" runat="server">Nav04</asp:LinkButton>
+               </td>
+           </tr>
+       </table>
+      </td>
+  </tr>
+  <tr><!-- row 3 -->
+   <td bgcolor="#99CCFF"> <!--Seccion del Menu Principal-->
+     </td>
+  </tr>
+  
+  <tr><!-- row 4 -->
+   <td bgcolor="#FFFFFF" style="padding: 10px !important;">
+       <telerik:RadSplitter ID="RadSplitter1" Runat="server" Height="900px">
+           <telerik:RadPane ID="RadPane1" Runat="server" BackColor="WhiteSmoke" 
+               Width="270px">
+
+               <table class="style1">
+                   <tr>
+                       <td style="color: #FFFFFF; background-image: url('/ig_res/ElectricBlue/images/header_hover.gif'); background-repeat: repeat; font-weight: bold;">
+                           Menu SySMO</td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <ig:WebDataMenu ID="WebDataMenu2" runat="server" ActivateOnHover="False" 
+                               ScrollingSpeed="Slow" StyleSetName="ElectricBlue" Width="270px">
+                           </ig:WebDataMenu>
+                       </td>
+                   </tr>
+               </table>
+
+           </telerik:RadPane>
+           <telerik:RadSplitBar ID="RadSplitBar1" Runat="server" CollapseMode="Forward" 
+               BorderWidth="5px">
+               </telerik:RadSplitBar>
+           <telerik:RadPane ID="RadPane2" Runat="server" BackColor="White" 
+               Scrolling="None" Width="950px">
+
+                   <table style="width: 100%;" >
+                       <tr>
+                           <td >
+                                   <div>&nbsp;</div>
+                                   <div id="contenido" style="overflow: auto">
+                                       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                                       </asp:ContentPlaceHolder>
+                                   </div>
+                                   <div>&nbsp;</div>
+                            </td>
+                       </tr>
+                   </table>
+
+           </telerik:RadPane>
+       </telerik:RadSplitter>
+      </td>
+  </tr>
+  <tr><!-- row 5 -->
+   <td class="piepagina">
+      <br />
+      Copyrigth Derechos Reservados 20xx <br />
+   </td>
+  </tr>
+<!--   This table was automatically created with Adobe Fireworks   -->
+<!--   http://www.adobe.com   -->
+<tr>
+<td>
+         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
+        </telerik:RadScriptManager>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
+        </telerik:RadWindowManager>
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+        </telerik:RadAjaxManager>
+</td>
+</tr>
+</table>
+</div>
+    </form>
+</body>
+</html>
